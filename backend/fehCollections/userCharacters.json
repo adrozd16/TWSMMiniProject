@@ -1,0 +1,13 @@
+{"_id":{"$oid":"5cb0eca087a8451b9b071cf6"},"character":{"$oid":"5caa1326100b3831ac9c34ff"},"level":40,"merges":5,"owner":"Agata"}
+{"_id":{"$oid":"5cb0f6a887a8451b9b071cf7"},"character":{"$oid":"5caa215ba2870d0a7499907b"},"level":12,"merges":2,"owner":"Agata"}
+{"_id":{"$oid":"5cb24b6f03036322bd56d9ff"},"owner":"Agata","character":"5caa1342100b3831ac9c3501","level":12,"merges":3}
+{"_id":{"$oid":"5cb24b9f03036322bd56da00"},"owner":"Agata","character":"5caa215ba2870d0a7499907b","level":12,"merges":5}
+{"_id":{"$oid":"5cb24e1e03036322bd56da01"},"owner":"Agnieszka","character":"5caa1342100b3831ac9c3501","level":12,"merges":6}
+{"_id":{"$oid":"5cb24f7203036322bd56da02"},"owner":"Agnieszka","character":"5caa215ba2870d0a7499907b","level":40,"merges":10}
+{"_id":{"$oid":"5cb2520061e281248f572ab2"},"owner":"Agata","character":"5caa215ba2870d0a7499907b","level":6,"merges":6}
+{"_id":{"$oid":"5cb43196af783d2a596a457b"},"owner":"Agata","character":"5caa1326100b3831ac9c34ff","level":39,"merges":6}
+{"_id":{"$oid":"5cb431f4af783d2a596a457c"},"owner":"Agnieszka","character":"5caa1326100b3831ac9c34ff","level":4,"merges":3}
+{"_id":{"$oid":"5cb447ca0c9f872b54f21303"},"owner":"Agata","character":"5caa1326100b3831ac9c34ff","level":23,"merges":3}
+{"_id":{"$oid":"5cb5ffe5d1bb213eb630c780"},"owner":"Agat","character":"5caa1342100b3831ac9c3501","level":12,"merges":5}
+{"_id":{"$oid":"5cb601a7d1bb213eb630c781"},"owner":"Agata","character":"5caa1ce8100b3831ac9c3502","level":11,"merges":4}
+{"_id":{"$oid":"5cb601d5d1bb213eb630c782"},"owner":"Agata","character":"5caa1342100b3831ac9c3501","level":12,"merges":4}
