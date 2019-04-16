@@ -1,0 +1,65 @@
+<mat-card class="character-card">
+  <mat-card-header>
+    <mat-card-title>{{ character == null ? "Unselected" : character?.name }}</mat-card-title>
+    <mat-card-subtitle>{{ character?.location}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + character?.image)" alt="">
+  <mat-card-content>
+    <p>
+      {{ character == null ? "Please select a character" : character?.description }}
+    </p>
+  </mat-card-content>
+
+</mat-card>
+
+<form [formGroup]="characterOptions" (submit)="onSubmit($event)">
+
+  <h4></h4>
+
+  <mat-form-field  appearance="outline">
+    <mat-label>Character</mat-label>
+    <mat-select formControlName="character" name="character" (selectionChange)="selectCharacter($event)">
+      <mat-option *ngFor="let chr of characterList" [value]="chr._id">
+        {{chr.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field  appearance="outline">
+    <mat-label>Level</mat-label>
+    <input matInput type="number" placeholder="Enter character level (1-40)" formControlName="level" min="1" max="40" />
+    <mat-error *ngIf="characterOptions.get('level')?.invalid">Level must be between 1 and 40</mat-error>
+  </mat-form-field>
+
+  <!-- <mat-form-field>
+        <mat-label>Merges</mat-label> 
+        <input matInput type="number" placeholder="Enter character merges (1-10)" formControlName="merges" min="1" max="10" />
+        <mat-error *ngIf="characterOptions.get('merges')?.invalid">Level must be between 1 and 10</mat-error>
+      </mat-form-field> -->
+
+
+
+  <mat-form-field  appearance="outline" class="no-underline">
+    <!-- the matInput with display:none allows placing slider inside mat-form-field -->
+    <input matInput placeholder="Merges" style="display: none">
+    <mat-label>Merges: {{ characterOptions.get('merges')?.value }}</mat-label>
+    <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="10" formControlName="merges">
+    </mat-slider>
+  </mat-form-field>
+  <!-- <mat-form-field>
+        <mat-label>Test</mat-label>
+        <mat-select formControlName="test" name="test">
+          <mat-option value="Wartosc1">
+            Wartosc 1
+          </mat-option>
+          <mat-option value="Wartosc2">
+              Wartosc 2
+            </mat-option>
+            <mat-option value="Wartosc3">
+                Wartosc 3
+              </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+  <button mat-button type="submit">Submit!</button>
+</form>

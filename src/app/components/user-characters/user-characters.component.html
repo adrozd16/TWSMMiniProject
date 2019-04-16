@@ -1,0 +1,20 @@
+<table mat-table #table [dataSource]="dataSource">
+  <ng-container matColumnDef="character">
+    <th mat-header-cell *matHeaderCellDef> Character </th>
+    <td mat-cell *matCellDef="let row"> {{row.character}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="level">
+    <th mat-header-cell *matHeaderCellDef> Level </th>
+    <td mat-cell *matCellDef="let row"> {{row.level}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="merges">
+    <th mat-header-cell *matHeaderCellDef> Merges </th>
+    <td mat-cell *matCellDef="let row"> {{row.merges}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['character', 'level', 'merges']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['character', 'level', 'merges'];"></tr>
+</table>
+<!-- <button mat-button (click)="refresh()">Refresh!</button> -->

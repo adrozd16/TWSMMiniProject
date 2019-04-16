@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Logowanie do systemu</h1>
+<div class="login-dialog-container" mat-dialog-content>
+  <mat-form-field>
+    <input matInput (keypress)="onKeyPress($event)" [(ngModel)]="data.username" placeholder="Username">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput (keypress)="onKeyPress($event)" [(ngModel)]="data.password" type="password" placeholder="Password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button #loginBtn mat-button [color]="secondary" [disableRipple]="false" [mat-dialog-close]="data">
+    <!-- <mat-icon>notifications_off</mat-icon> -->
+    <span>Login</span>
+  </button>
+</div>

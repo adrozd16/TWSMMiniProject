@@ -1,0 +1,9 @@
+.login-dialog-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-dialog-container > * {
+    width: 100%;
+  }
+  
