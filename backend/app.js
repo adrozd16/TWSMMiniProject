@@ -12,7 +12,7 @@ const dbClient  = new MongoClient(dbUrl);
 let db;
 
 dbClient.connect((err) => {
-    console.log("Połączono poprawnie z MongoDB server");
+    console.log("Connected to MongoDB");
     db = dbClient.db(dbName);
     //dbClient.close();
 }, { useNewUrlParser: true });
@@ -20,7 +20,7 @@ dbClient.connect((err) => {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.get("/", (req, res) => res.send("Hello world"));
+app.get("/", (req, res) => res.send("Welcome to FEH API"));
 app.get("/api/characters/:id", (req, res) => {
     db.collection("characters")
     .findOne({"_id": new ObjectID(req.params.id)})
@@ -28,23 +28,9 @@ app.get("/api/characters/:id", (req, res) => {
 })
 app.get("/api/characters", (req, res) => {
     const collection = db.collection("characters");
-    // console.log(collection);
-    // collection.find({}).forEach(element => {
-    //     console.log(element);
-    // });
     collection.find({}).toArray((err, docs) => {
-        // console.log(err);
-        // res.send(JSON.stringify(docs));
         res.send(docs);
     })
-    // res.send(JSON.stringify([{
-    //     name: "Xena",
-    //     level: 150
-    // },
-    // {
-    //     name: "Batman1",
-    //     level: 100
-    // }]))
 })
 
 app.post("/api/characters", (req, res) => {
@@ -60,4 +46,4 @@ app.get("/api/characters/user/:username", (req, res) => {
 })
 
 
-app.listen(port, () => console.info("Serwer uruchmiony na porcie " + port));
+app.listen(port, () => console.info("Server started on port " + port));

@@ -11,9 +11,8 @@ const API_URL = environment.apiUrl;
 })
 export class FehService {
   
-  private characterListCache = null;
-
   constructor(private httpClient: HttpClient) { }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -32,25 +31,18 @@ export class FehService {
   
 
   getCharacterList(): Observable<any>{
-    // if(this.characterListCache == null){
-    return this.characterListCache = this.httpClient.get(API_URL + "/api/characters");//.subscribe(list => this.characterListCache = list);
-    // }
-    // else{
-    //   console.log("CharacterList z kesza");
-    // }
-    // return of(this.characterListCache);
+    return this.httpClient.get(API_URL + "/api/characters");
   }
 
   getCharacter(id){
     return this.httpClient.get(API_URL + "/api/characters/" + id);
   }
+
   saveCharacter(chr){
-    console.log("POST", chr);
     return this.httpClient.post(API_URL + "/api/characters", chr).pipe(
       catchError(this.handleError)
     );
   }
-
 
   getUserCharacterList(username): Observable<any>{
     return this.httpClient.get(API_URL + "/api/characters/user/"+username);

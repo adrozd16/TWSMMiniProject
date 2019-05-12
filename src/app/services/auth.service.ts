@@ -15,7 +15,8 @@ export class AuthService {
 
 
   login(username, password){
-    // docelowo tutaj powinno być wywołąnie usługi na serwerze
+    // It's only a mock-up. In the real application, the real authentication service will be called here
+    // and the user object is set after proper login
     if(username != ""){
       this.user = {
         name: username
@@ -23,6 +24,7 @@ export class AuthService {
     }
   }
 
+  // if the <user> object is null, then whole application knows that no user is logged in
   logout(){
     this.user = null;
   }

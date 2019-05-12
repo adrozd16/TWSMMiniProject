@@ -8,8 +8,10 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button #loginBtn mat-button [color]="secondary" [disableRipple]="false" [mat-dialog-close]="data">
-    <!-- <mat-icon>notifications_off</mat-icon> -->
-    <span>Login</span>
+  <button #loginBtn mat-button color="primary" [disableRipple]="false" [mat-dialog-close]="data">
+      <span>Login</span>
+  </button>
+  <button #cancelBtn mat-button color="secondary" [disableRipple]="false" [mat-dialog-close]="null">
+      <span>Cancel</span>
   </button>
 </div>

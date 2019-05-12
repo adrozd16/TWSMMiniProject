@@ -15,6 +15,7 @@ export class UserCharactersComponent implements OnInit {
   ngOnInit() {
     this.refresh();
   }
+  
   refresh(){
     this.fehService.getCharacterList().subscribe(list => {
       this.fehService.getUserCharacterList(this.authService.user.name).subscribe(ulist => {

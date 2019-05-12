@@ -1,52 +1,18 @@
-<!-- <header>
-  <h1>
-    <span id="logo-glowne" class="logo">FEH Fanclub</span>
-  </h1>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Strona główna</a></li>
-      <li><a routerLink="/characters">Lista postaci</a></li>
-      <li><a routerLink="/contact">Kontakt</a></li>
-      <li><a routerLink="/mycharacters">My characters</a></li>
-    </ul>
-  </nav>
-</header> -->
 <nav class="docs-navbar-header">
   <a mat-button class="docs-button" routerLink="/">
-    <!-- <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/angular-white-transparent.svg"
-         alt="angular"> -->
     <span>FEH</span>
   </a>
+
   <ng-container *ngIf="authService.user != null">
     <a mat-button class="docs-navbar-hide-small docs-button"
     *ngFor="let item of menuItems"
       [routerLink]="item.link">{{item.name}}</a>
   </ng-container>
+
   <div class="flex-spacer"></div>
   <a *ngIf="authService.user == null" mat-button class="docs-navbar-hide-small docs-button" (click)="loginClick()">Login</a>
   <ng-container *ngIf="authService.user != null">
     <mat-label>Hello {{authService.user.name}}</mat-label>
     <a mat-button class="docs-navbar-hide-small docs-button" (click)="logoutClick()">Logout</a>
   </ng-container>
-  <!-- <version-picker></version-picker>
-  <theme-picker></theme-picker>
-  <a mat-button class="docs-button docs-navbar-hide-small" href="https://github.com/angular/material2"
-     aria-label="GitHub Repository">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
-         alt="angular">
-    GitHub
-  </a>
-  <a mat-icon-button class="docs-button docs-navbar-show-small"
-     href="https://github.com/angular/material2" aria-label="GitHub Repository">
-    <img class="docs-angular-logo"
-         src="../../../assets/img/homepage/github-circle-white-transparent.svg"
-         alt="angular">
-  </a> -->
-</nav>
-<nav class="docs-navbar docs-navbar-show-small">
-  <a mat-button class="docs-navbar-link"
-     *ngFor="let item of menuItems"
-     [routerLink]="item.link">{{item.name}}</a>
 </nav>

@@ -1,6 +1,0 @@
-<ul>
-  <li *ngFor="let character of characterList">
-    <img *ngIf="character.image !== undefined" [src]="sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + character.image)"/>
-    <span class="name">{{ character.name }} </span> <strong>{{ character.location }}</strong>
-  </li>
-</ul>
