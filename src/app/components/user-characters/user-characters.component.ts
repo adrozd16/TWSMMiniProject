@@ -21,7 +21,12 @@ export class UserCharactersComponent implements OnInit {
       this.fehService.getUserCharacterList(this.authService.user.name).subscribe(ulist => {
         this.dataSource = ulist.map(item => {
           let filtered = list.filter(chr => chr._id === item.character);
-          item.character = filtered[0].name;
+          if(filtered.length > 0){
+            item.character = filtered[0].name;
+          }
+          else{
+            item.character = "Unknown"
+          }
           return item;
         })
         
